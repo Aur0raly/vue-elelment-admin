@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21169301",
+      "name": "https-symbol",
+      "font_class": "https-symbol",
+      "unicode": "e595",
+      "unicode_decimal": 58773
+    },
+    {
+      "icon_id": "21169493",
+      "name": "user-account-box",
+      "font_class": "user-account-box",
+      "unicode": "e5b2",
+      "unicode_decimal": 58802
+    }
+  ]
+}
