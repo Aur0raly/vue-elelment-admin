@@ -103,8 +103,7 @@ export default {
   img {
     width: 100%;
     height: 100%;
-    background-color: #EEEEEE;
-    border-radius: 50%;
+    transform: scale(0.9);
   }
 }
 

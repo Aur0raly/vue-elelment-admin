@@ -5,3 +5,16 @@ html,body,#app{
     margin: 0;
     background-color: #EEEEEE;
 }
+
+.el-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.el-pagination {
+    margin-top: 20px;
+}
+
+.cell {
+    display: flex;
+    justify-content: space-between;
+}
