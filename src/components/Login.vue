@@ -40,11 +40,11 @@ export default {
       loginFormRules: {
         username: [
           { required: true, message: '请输入登录名', trigger: 'blur' },
-          { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          { min: 3, max: 10, message: '长度在 3 到 5 个字符', trigger: 'blur' }
         ],
         password: [
           { required: true, message: '请输入登录密码', trigger: 'blur' },
-          { min: 3, max: 6, message: '长度在 3 到 6 个字符', trigger: 'blur' }
+          { min: 3, max: 18, message: '长度在 3 到 6 个字符', trigger: 'blur' }
         ]
       }
     }
@@ -59,7 +59,7 @@ export default {
         // console.log(valid)
         if (!valid) return
         const { data: res } = await this.$http.post('login', this.from)
-        // console.log(res)
+        console.log(res)
         if (res.meta.status !== 200) return this.$message.error('账户或密码错误，登录失败')
         this.$message.success('登录成功')
         // console.log(res.data.token)
