@@ -18,3 +18,7 @@ html,body,#app{
     display: flex;
     justify-content: space-between;
 }
+
+.el-cascader-panel {
+    height: 400px;
+}

@@ -8,7 +8,7 @@ import Roles from '@/components/Jurisdiction/Roles'
 import Rights from '@/components/Jurisdiction/Rights'
 import Goods from '@/components/Goods/Goods'
 import Params from '@/components/Goods/Params'
-import Categories from '@/components/Goods/Categories'
+import Cate from '@/components/Goods/Cate'
 import Orders from '@/components/Order/Orders'
 import Reports from '@/components/Report/Reports'
 
@@ -36,7 +36,7 @@ const routes = [
       { path: '/rights', name: Rights, component: Rights },
       { path: '/goods', name: Goods, component: Goods },
       { path: '/params', name: Params, component: Params },
-      { path: '/categories', name: Categories, component: Categories },
+      { path: '/categories', name: Cate, component: Cate },
       { path: '/orders', name: Orders, component: Orders },
       { path: '/reports', name: Reports, component: Reports }
     ]

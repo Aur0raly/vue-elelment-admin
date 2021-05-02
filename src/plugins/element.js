@@ -32,7 +32,8 @@ import {
   Tag,
   Tree,
   Select,
-  Option
+  Option,
+  Cascader
 } from 'element-ui' // 按需导入组件
 Vue.prototype.$message = Message // 使用prototype挂载Message组件
 Vue.prototype.$confirm = MessageBox.confirm
@@ -67,3 +68,4 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
