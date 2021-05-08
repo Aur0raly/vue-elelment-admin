@@ -33,7 +33,10 @@ import {
   Tree,
   Select,
   Option,
-  Cascader
+  Cascader,
+  Alert,
+  Tabs,
+  TabPane
 } from 'element-ui' // 按需导入组件
 Vue.prototype.$message = Message // 使用prototype挂载Message组件
 Vue.prototype.$confirm = MessageBox.confirm
@@ -69,3 +72,6 @@ Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
 Vue.use(Cascader)
+Vue.use(Alert)
+Vue.use(Tabs)
+Vue.use(TabPane)
