@@ -5,7 +5,6 @@
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
     </el-breadcrumb>
-
     <el-card shadow="hover">
       <el-row :gutter="50">
         <el-col :span="6">
@@ -300,7 +299,7 @@ export default {
         if (res.meta.status !== 201) return this.$message.error('添加用户失败')
         this.$message.success('添加用户成功')
         this.addDialogVisible = false
-        this.getUserList()
+        await this.getUserList()
       })
     },
     editUserInfo () {
@@ -317,7 +316,7 @@ export default {
         }
         this.$message.success('修改用户成功')
         this.editDialogVisible = false
-        this.getUserList()
+        await this.getUserList()
       })
     },
     async showEditDialog (id) {
@@ -342,7 +341,7 @@ export default {
       if (res.meta.status === 400) return this.$message.error('无法删除admin用户')
       if (res.meta.status !== 200) return this.$message.error('删除失败')
       this.$message.success('删除成功')
-      this.getUserList()
+      await this.getUserList()
     },
     async setRole (userInfo) {
       this.userInfo = userInfo
@@ -360,7 +359,7 @@ export default {
       if (res.meta.status !== 200) return this.$message.error('更改用户角色失败')
       this.$message.success('更新用户角色成功')
       this.setRoleDialogVisible = false
-      this.getUserList()
+      await this.getUserList()
     },
     setRoleDialogCloe () {
       this.selectedRoleId = ''

@@ -22,3 +22,16 @@ html,body,#app{
 .el-cascader-panel {
     height: 400px;
 }
+
+.el-steps{
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.el-tabs {
+    margin-top: 50px;
+}
+
+.ql-editor {
+    min-height: 300px;
+}
