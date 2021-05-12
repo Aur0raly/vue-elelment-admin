@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "core-js": "^3.6.5",
+    "core-js": "^3.12.1",
+    "echarts": "^5.1.1",
     "element-ui": "^2.4.5",
     "lodash": "^4.17.21",
     "vue": "^2.6.11",
@@ -21,7 +22,7 @@
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-service": "^4.5.13",
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
     "babel-plugin-component": "^1.1.1",

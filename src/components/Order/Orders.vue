@@ -58,7 +58,6 @@
             <el-cascader
               v-model="editForm.address1"
               @change="handleChange"
-              :props="addressProps"
               :options="cityData"></el-cascader>
           </el-form-item>
           <el-form-item label="详细地址" prop="address2">
