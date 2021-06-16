@@ -3,8 +3,8 @@
   <el-container class="home-container">
     <el-header>
       <div>
-        <img src="../assets/logo.png" alt="">
-        <span>电商后台管理系统</span>
+        <img src="../assets/images/avatar.svg" alt="">
+        <span>高考志愿填报系统</span>
       </div>
       <el-button @click="quit" type="info">退出登录</el-button>
     </el-header>
@@ -76,6 +76,7 @@ export default {
     },
     async getMenuList () {
       const { data: res } = await this.$http.get('menus')
+      console.log(res)
       if (res.meta.status !== 200) return this.$message.error('菜单列表获取失败')
       this.menuList = res.data
       console.log(res)

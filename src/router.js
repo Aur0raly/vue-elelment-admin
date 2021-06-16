@@ -22,25 +22,23 @@ const routes = [
   },
   {
     path: '/login',
-    name: Login,
     component: Login
   },
   {
     path: '/home',
-    name: Home,
     component: Home,
     redirect: '/welcome',
     children: [
-      { path: '/welcome', name: Welcome, component: Welcome },
-      { path: '/users', name: Users, component: Users },
-      { path: '/roles', name: Roles, component: Roles },
-      { path: '/rights', name: Rights, component: Rights },
-      { path: '/goods', name: Goods, component: Goods },
-      { path: '/params', name: Params, component: Params },
-      { path: '/categories', name: Cate, component: Cate },
-      { path: '/orders', name: Orders, component: Orders },
-      { path: '/reports', name: Reports, component: Reports },
-      { path: '/goods/add', name: Add, component: Add }
+      { path: '/welcome', component: Welcome },
+      { path: '/users', component: Users },
+      { path: '/roles', component: Roles },
+      { path: '/rights', component: Rights },
+      { path: '/goods', component: Goods },
+      { path: '/params', component: Params },
+      { path: '/categories', component: Cate },
+      { path: '/orders', component: Orders },
+      { path: '/reports', component: Reports },
+      { path: '/goods/add', component: Add }
     ]
   }
 ]

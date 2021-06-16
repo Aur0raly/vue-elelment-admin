@@ -12,13 +12,22 @@ import VueQuillEditor from 'vue-quill-editor'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
+// 引入 nprogress
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+import '../src/assets/icon/icon.less'
 
 Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 axios.interceptors.request.use(config => {
+  NProgress.start()
   // console.log(config)
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 在最后必须return config
+  return config
+})
+axios.interceptors.response.use(config => {
+  NProgress.done()
   return config
 })
 

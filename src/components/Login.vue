@@ -1,28 +1,32 @@
 <template>
   <div class="login_container">
-    <div class="login_box">
-      <!--头像区域-->
-      <div class="avatar_box">
-        <img src="../assets/logo.png" alt="">
+    <div class="login">
+      <div class="login_box">
+<!--        &lt;!&ndash;头像区域&ndash;&gt;-->
+<!--        <div class="avatar_box">-->
+<!--          <img src="../assets/images/avatar.svg" alt="">-->
+<!--        </div>-->
+        <div class="login_text">
+          欢迎登录
+        </div>
+        <!--表单区域-->
+        <el-form :model="from" :rules="loginFormRules" ref="loginFormRef" class="form_login">
+          <!--账号-->
+          <el-form-item prop="username" style="margin-bottom: 50px">
+            <i class="iconfont icon-username"></i>
+            <el-input v-model="from.username" placeholder="请输入账号"></el-input>
+          </el-form-item>
+          <!--密码-->
+          <el-form-item prop="password">
+            <i class="iconfont icon-password"></i>
+            <el-input v-model="from.password" type="password" placeholder="请输入密码"></el-input>
+          </el-form-item>
+          <!--登录-->
+          <el-form-item class="btns">
+            <el-button round type="primary" @click="login" class="login_button">登录</el-button>
+          </el-form-item>
+        </el-form>
       </div>
-      <!--表单区域-->
-      <el-form :model="from" :rules="loginFormRules" ref="loginFormRef" class="form_login">
-        <!--账号-->
-        <el-form-item prop="username">
-          <el-input v-model="from.username" prefix-icon="iconfont icon-user-account-box
-                    .icon-user-account-box"></el-input>
-        </el-form-item>
-        <!--密码-->
-        <el-form-item prop="password">
-          <el-input v-model="from.password" type="password" prefix-icon="iconfont icon-https-symbol
-                    .icon-https-symbol"></el-input>
-        </el-form-item>
-        <!--登录-->
-        <el-form-item class="btns">
-          <el-button type="primary" @click="login">登录</el-button>
-          <el-button type="info" @click="resetLoginForm">重置</el-button>
-        </el-form-item>
-      </el-form>
     </div>
   </div>
 </template>
@@ -34,8 +38,8 @@ export default {
   data () {
     return {
       from: {
-        username: 'admin',
-        password: '123456'
+        username: '',
+        password: ''
       },
       loginFormRules: {
         username: [
@@ -50,10 +54,10 @@ export default {
     }
   },
   methods: {
-    resetLoginForm () {
-      // console.log(this);
-      this.$refs.loginFormRef.resetFields()
-    },
+    // resetLoginForm () {
+    //   // console.log(this);
+    //   this.$refs.loginFormRef.resetFields()
+    // },
     login () {
       this.$refs.loginFormRef.validate(async valid => {
         // console.log(valid)
@@ -74,49 +78,96 @@ export default {
 <style scoped="scoped" lang="less">
 .login_container {
   height: 100%;
-  background-color: #3c405f;
+  background-image: url('~@/assets/images/bgimg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  background-image: url("~@/assets/images/login_box.png");
+  width: 1314px;
+  height: 660px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.login_text {
+  font-size: 55px;
+  font-weight: bold;
+  color: #3e58c6;
+  width: 330px;
+  margin-bottom: 70px;
+  height: 85px;
+  text-align: center;
+  border-bottom: 4px solid #6386ff;
+}
+
+.login_pic {
+  transform: translate(15px, 0px);
+  img {
+    width: 500px;
+    height: 600px;
+  }
 }
 
 .login_box {
   width: 450px;
-  height: 300px;
-  background: #fff;
+  height: 450px;
   border-radius: 5px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.avatar_box {
-  height: 130px;
-  width: 130px;
-  border: 1px solid #EEE;
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 0 10px #ddd;
-  position: absolute;
-  left: 50%;
-  background-color: #fff;
-  transform: translate(-50%, -50%);
-
-  img {
-    width: 100%;
-    height: 100%;
-    transform: scale(0.9);
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(65%, 0%);
 }
 
 .btns {
   display: flex;
   justify-content: flex-end;
+  margin-top: 50px;
+  .login_button {
+    background-color: #3e58c6;
+    height: 65px;
+    width: 230px;
+    border-radius: 115px;
+    font-size: 25px;
+    font-weight: bold;
+    border: unset;
+  }
 }
 
 .form_login {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0 10px 0 10px;
   box-sizing: border-box;
+  /deep/ .el-form-item__content {
+    display: flex;
+    align-items: center;
+    .icon-username, .icon-password {
+      font-size: 40px;
+      color: #3e58c6;
+      margin-right: 15px;
+    }
+  }
+  .el-input {
+    /deep/ .el-input__inner {
+      background-color: #eeeff3;
+      width: 390px;
+      height: 60px;
+      border-radius: 30px;
+      border: unset;
+      font-size: 20px;
+    }
+  }
 }
 </style>

@@ -1,44 +1,41 @@
 <template>
   <div>
-    <el-carousel :interval="4000" type="card" height="300px">
-      <el-carousel-item v-for="item in 3" :key="item">
-        <h3 class="medium">{{ item }}</h3>
-      </el-carousel-item>
-    </el-carousel>
-    <div class="block">
-      <el-timeline>
-        <el-timeline-item timestamp="2021/4/24" placement="top">
-          <el-card>
-            <h4>完成 User 内容绘制</h4>
-            <p>宋茂晨 提交于 2021/4/24 21:30</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2021/4/21" placement="top">
-          <el-card>
-            <h4>完成 Home 页面绘制</h4>
-            <p>宋茂晨 提交于 2021/4/21 12:20</p>
-          </el-card>
-        </el-timeline-item>
-        <el-timeline-item timestamp="2021/4/20" placement="top">
-          <el-card>
-            <h4>完成 Login 登录模块</h4>
-            <p>宋茂晨 提交于 2021/4/20 20:46</p>
-          </el-card>
-        </el-timeline-item>
-      </el-timeline>
-    </div>
-    <!--    <el-calendar v-model="value"></el-calendar>-->
+    <div id="chart_line" style="width: 700px;height: 500px;"></div>
+    <div id=""></div>
   </div>
-
 </template>
 
 <script>
+import * as echarts from 'echarts'
 export default {
   name: 'Welcome',
   data () {
     return {
       // value: new Date()
+      option: {
+        title: {
+          text: '高考录取率'
+        },
+        xAxis: {
+          type: 'category',
+          data: ['2012', '2013', '2014', '2015', '2016', '2017', '2018']
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          type: 'line',
+          smooth: true
+        }]
+      }
     }
+  },
+  mounted () {
+    // eslint-disable-next-line camelcase
+    const chart_line = echarts.init(document.getElementById('chart_line'))
+    const option = this.option
+    option && chart_line.setOption(option)
   }
 }
 </script>
